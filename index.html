@@ -5,22 +5,17 @@
     </style>
   </head>
   <body>
-    <img id="myImg" src="http://i.imgur.com/AjYpoMO.jpg" />
-    <img id="myImg" src="http://www.splendidwallpaper.com/wp-content/uploads/2012/11/high-resolution-wallpaper-nature-2560x1440.jpg" />
+    <img class="myImg" src="http://www.artsfon.com/pic/201502/2560x1600/artsfon.com-59724.jpg" />
+    <img class="myImg" src="http://www.splendidwallpaper.com/wp-content/uploads/2012/11/high-resolution-wallpaper-nature-2560x1440.jpg" />
   </body>
   <script>
-  function ready(fn) {
-    if (document.readyState != 'loading'){
-      fn();
-    } else if (document.addEventListener) {
-      document.addEventListener('DOMContentLoaded', fn);
-    } else {
-      document.attachEvent('onreadystatechange', function() {
-        if (document.readyState != 'loading')
-          fn();
-      });
-    }
+  function loadSprite(src, callback) {
+      var sprite = new Image();
+      sprite.onload = callback;
+      sprite.src = src;
   }
-  ready(console.log('kavan'));
+  loadSprite('http://www.artsfon.com/pic/201502/2560x1600/artsfon.com-59724.jpg', function() {
+    console.log('imageloaded');
+  });
   </script>
 </html>
