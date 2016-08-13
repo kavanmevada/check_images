@@ -1,16 +1,26 @@
 <html>
   <head>
     <style>
-      
+
     </style>
   </head>
   <body>
-    <img id="myImg" src="http://www.artsfon.com/pic/201502/2560x1600/artsfon.com-59724.jpg" width="192" height="120" />
+    <img id="myImg" src="http://www.artsfon.com/pic/201502/2560x1600/artsfon.com-59724.jpg" />
+    <img id="myImg" src="http://www.splendidwallpaper.com/wp-content/uploads/2012/11/high-resolution-wallpaper-nature-2560x1440.jpg" />
   </body>
   <script>
-    var x = document.getElementById("myImg").complete;
-    if(x == true) {
-      console.log('images loaded !!');
+  function ready(fn) {
+    if (document.readyState != 'loading'){
+      fn();
+    } else if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', fn);
+    } else {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState != 'loading')
+          fn();
+      });
     }
+  }
+  ready(console.log('kavan'));
   </script>
 </html>
